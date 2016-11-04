@@ -1,0 +1,43 @@
+
+
+  <h2>Angular 2 Sorting, Pagination, filtering  Example</h2>
+<P>
+Angular 2 resuable pagination component, multi-columns sorting component. multi columns data filtering component</P>
+
+<table>
+    <tr><td colspan="5"><Pager-Com [recordCount]="recordCount" [pageSize]="10" (paging)="pagingEvent($event)"></Pager-Com></td></tr>
+    
+        <tr style="background-color:burlywood; font-weight:bold;font-size:15px;">
+        <td>
+            ID <sort-c sortOn="ID" isNumber="true" (onSorting)="sorting($event)"></sort-c>
+            <filter-c fiterAgainst="ID" width="70px" height="15px" (onFiltering)="filtering($event)"></filter-c>
+        </td>
+        <td></td>
+        <td>
+            Firstname <sort-c sortOn="Firstname" isNumber="false" (onSorting)="sorting($event)"></sort-c>
+            <filter-c fiterAgainst="Firstname" width="70px" height="15px" (onFiltering)="filtering($event)"></filter-c>
+        </td>
+        <td></td>
+        <td>
+            Lastname <sort-c sortOn="Lastname" isNumber="false" (onSorting)="sorting($event)"></sort-c>
+            <filter-c fiterAgainst="Lastname" width="70px" height="15px" (onFiltering)="filtering($event)"></filter-c>
+        </td>
+    </tr>
+    <tr *ngFor="let r of displayRecords">
+        <td>{{r.ID}}</td>
+        <td>  </td>
+        <td>{{r.Firstname}}</td>
+        <td>  </td>
+        <td>{{r.Lastname}}</td>
+    </tr>
+</table>
+<hr/>
+
+<h4>Note:</h4>
+<div>  
+  Click on  '♦','▼','▲' for sorting. '♦'= no sorted, '▼' = ascending sorted, '▲' = descending sorted
+  
+</div>
+<div>
+   Click on  ╦ for filtering
+</div>

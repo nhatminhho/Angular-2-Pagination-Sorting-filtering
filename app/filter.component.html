@@ -1,0 +1,5 @@
+
+<span style="flex-wrap:nowrap">
+    <br *ngIf="filterOn==true" />
+    <input class="filterInput" [width]="width" [height]="height" (keydown.Enter)="filterChange($event,'Enter')" type="text" *ngIf="filterOn==true"/><label [class]="filterStatusCss" title="Click to toggle filtering" (click)="fitlerClick($event)">{{icon}}</label>
+</span>

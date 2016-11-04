@@ -1,0 +1,18 @@
+<span class="pager" >
+    <b>Page size:</b>
+    <select (change)="pageSizeChange($event)" [ngModel]="selectedPageSize">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+        <option value="50">50</option>
+        <option value="60">60</option>
+        <option value="70">70</option>
+        <option value="80">80</option>
+        <option value="90">90</option>
+        <option value="100">100</option>
+    </select>
+    <label class="pageLink" *ngIf="preGroup.linkText !=''"  (click)="pageIndexChange($event,preGroup.index)">{{preGroup.linkText}}</label>
+    <label *ngFor="let it of pageLinks" [class]="getPageLinkCssClass(it.index)" (click)="pageIndexChange($event,it.index)">{{it.linkText}}</label>
+    <label class="pageLink" *ngIf="nextGroup.linkText !=''" (click)="pageIndexChange($event,nextGroup.index)">{{nextGroup.linkText}}</label>
+</span>
